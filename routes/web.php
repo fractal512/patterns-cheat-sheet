@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/fundamentals/property-container', [App\Http\Controllers\FundamentalPatternsController::class, 'PropertyContainer'])->name('property-container');
+Route::get('/fundamentals/delegation', [App\Http\Controllers\FundamentalPatternsController::class, 'Delegation'])->name('delegation');

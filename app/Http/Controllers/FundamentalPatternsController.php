@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\DesignPatterns\Fundamental\Delegation\AppMessenger;
 use App\DesignPatterns\Fundamental\PropertyContainer\BlogPost;
 use App\DesignPatterns\Fundamental\PropertyContainer\PropertyContainer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class FundamentalPatternsController extends Controller
 {
@@ -34,7 +36,7 @@ class FundamentalPatternsController extends Controller
         $add_read_only = clone $item;
         $item->deleteProperty('read_only');
 
-        return view('dump',
+        return view('propertyContainer',
             compact(
                 'name',
                 'description',
@@ -47,13 +49,32 @@ class FundamentalPatternsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Delegation Pattern
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
-    public function create()
+    public function Delegation()
     {
-        //
+        $name = 'Delegation';
+
+        $item = new AppMessenger();
+
+        $item->setSender('sender@email.com')
+             ->setRecipient('recipient@email.com')
+             ->setMessage('Message sent by email messenger.')
+             ->send();
+
+        Log::info( print_r($item, true) );
+
+        $item->toSms()
+             ->setSender('0931234567')
+             ->setRecipient('0671234567')
+             ->setMessage('Message sent by SMS messenger')
+             ->send();
+
+        Log::info( print_r($item, true) );
+
+        return view('delegation', compact('name', 'item'));
     }
 
     /**
