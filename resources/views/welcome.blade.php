@@ -46,9 +46,10 @@
                 </div>
 
                 <div class="pt-8 sm:pt-0">
-                    <h1>Fundamental Patterns</h1>
+                    <h2>Fundamental Patterns:</h2>
                     <ul>
-                        <li><a href="{{ route('property-container') }}" target="_blank">Property Container Pattern</a></li>
+                        <li><a href="{{ route('property-container') }}" target="_blank">Property Container Pattern &rarr;</a></li>
+                        <li><a href="{{ route('delegation') }}" target="_blank">Delegation Pattern &rarr;</a></li>
                     </ul>
                 </div>
 
