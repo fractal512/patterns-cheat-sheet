@@ -7,3 +7,4 @@ Examples of design patterns implementation in PHP OOP (Laravel).
 
 - Property Container
 - Delegation
+- Event Channel

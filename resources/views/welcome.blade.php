@@ -50,6 +50,7 @@
                     <ul>
                         <li><a href="{{ route('property-container') }}" target="_blank">Property Container Pattern &rarr;</a></li>
                         <li><a href="{{ route('delegation') }}" target="_blank">Delegation Pattern &rarr;</a></li>
+                        <li><a href="{{ route('event-channel') }}" target="_blank">Event Channel &rarr;</a></li>
                     </ul>
                 </div>
 

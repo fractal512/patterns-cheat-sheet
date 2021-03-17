@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DesignPatterns\Fundamental\Delegation\AppMessenger;
+use App\DesignPatterns\Fundamental\EventChannel\EventChannelJob;
 use App\DesignPatterns\Fundamental\PropertyContainer\BlogPost;
 use App\DesignPatterns\Fundamental\PropertyContainer\PropertyContainer;
 use Illuminate\Http\Request;
@@ -77,15 +78,15 @@ class FundamentalPatternsController extends Controller
         return view('delegation', compact('name', 'item'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function EventChannel()
     {
-        //
+        $name = 'Event Channel Pattern';
+
+        $item = new EventChannelJob();
+        $item->run();
+        //$item = [];
+
+        return view('eventChannel', compact('name', 'item'));
     }
 
     /**
