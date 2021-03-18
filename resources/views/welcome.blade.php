@@ -55,6 +55,7 @@
                     <h2>Creational Patterns:</h2>
                     <ul>
                         <li><a href="{{ route('abstract-factory') }}" target="_blank">Abstract Factory Pattern &rarr;</a></li>
+                        <li><a href="{{ route('factory-method') }}" target="_blank">Factory Method Pattern &rarr;</a></li>
                     </ul>
                 </div>
 

@@ -22,3 +22,4 @@ Route::get('/fundamentals/delegation', [App\Http\Controllers\FundamentalPatterns
 Route::get('/fundamentals/event-channel', [App\Http\Controllers\FundamentalPatternsController::class, 'EventChannel'])->name('event-channel');
 
 Route::get('/creational/abstract-factory', [App\Http\Controllers\CreationalPatternsController::class, 'AbstractFactory'])->name('abstract-factory');
+Route::get('/creational/factory-method', [App\Http\Controllers\CreationalPatternsController::class, 'FactoryMethod'])->name('factory-method');
