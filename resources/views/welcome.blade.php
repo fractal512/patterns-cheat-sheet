@@ -52,6 +52,10 @@
                         <li><a href="{{ route('delegation') }}" target="_blank">Delegation Pattern &rarr;</a></li>
                         <li><a href="{{ route('event-channel') }}" target="_blank">Event Channel &rarr;</a></li>
                     </ul>
+                    <h2>Creational Patterns:</h2>
+                    <ul>
+                        <li><a href="{{ route('abstract-factory') }}" target="_blank">Abstract Factory Pattern &rarr;</a></li>
+                    </ul>
                 </div>
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
