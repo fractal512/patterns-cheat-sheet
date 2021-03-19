@@ -6,6 +6,7 @@ use App\DesignPatterns\Creational\AbstractFactory\GuiKitFactory;
 use App\DesignPatterns\Creational\AbstractFactory\Interfaces\GuiFactoryInterface;
 use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\BootstrapDialogForm;
 use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\SemanticUiDialogForm;
+use App\DesignPatterns\Creational\StaticFactory\StaticFactory;
 use Illuminate\Support\Facades\Log;
 
 class CreationalPatternsController extends Controller
@@ -66,5 +67,31 @@ class CreationalPatternsController extends Controller
         Log::info(print_r($dialogForm->render(), true));
 
         return view('factoryMethod', compact('name'));
+    }
+
+    public function StaticFactory()
+    {
+        $name = 'Static Factory';
+        $this->clearLaravelLog()->logPatternName($name);
+
+        $appMailMessenger = StaticFactory::build('email');
+        Log::info(print_r($appMailMessenger, true));
+
+        $appPhoneMessenger = StaticFactory::build('sms');
+        Log::info(print_r($appPhoneMessenger, true));
+
+        return view('staticFactory', compact('name'));
+    }
+
+    private function clearLaravelLog()
+    {
+        file_put_contents(storage_path('logs/laravel.log'),'');
+        return $this;
+    }
+
+    private function logPatternName($name)
+    {
+        Log::info($name);
+        return $this;
     }
 }

@@ -12,3 +12,5 @@ Examples of design patterns implementation in PHP OOP (Laravel).
 ### Creational Patterns
 
 - Abstract Factory
+- Factory Method
+- Static Factory

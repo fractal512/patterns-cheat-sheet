@@ -56,6 +56,7 @@
                     <ul>
                         <li><a href="{{ route('abstract-factory') }}" target="_blank">Abstract Factory Pattern &rarr;</a></li>
                         <li><a href="{{ route('factory-method') }}" target="_blank">Factory Method Pattern &rarr;</a></li>
+                        <li><a href="{{ route('static-factory') }}" target="_blank">Static Factory Pattern &rarr;</a></li>
                     </ul>
                 </div>
 
