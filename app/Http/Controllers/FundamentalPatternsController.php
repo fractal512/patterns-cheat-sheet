@@ -56,6 +56,7 @@ class FundamentalPatternsController extends Controller
     public function Delegation()
     {
         $name = 'Delegation';
+        $this->clearLaravelLog()->logMessage($name);
 
         $item = new AppMessenger();
 
@@ -64,7 +65,7 @@ class FundamentalPatternsController extends Controller
              ->setMessage('Message sent by email messenger.')
              ->send();
 
-        Log::info( print_r($item, true) );
+        $this->logMessage( print_r($item, true) );
 
         $item->toSms()
              ->setSender('0931234567')
@@ -72,7 +73,7 @@ class FundamentalPatternsController extends Controller
              ->setMessage('Message sent by SMS messenger')
              ->send();
 
-        Log::info( print_r($item, true) );
+        $this->logMessage( print_r($item, true) );
 
         return view('delegation', compact('name', 'item'));
     }
@@ -85,6 +86,7 @@ class FundamentalPatternsController extends Controller
     public function EventChannel()
     {
         $name = 'Event Channel Pattern';
+        $this->clearLaravelLog()->logMessage($name);
 
         $item = new EventChannelJob();
         $item->run();

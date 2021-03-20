@@ -7,7 +7,6 @@ use App\DesignPatterns\Creational\AbstractFactory\Interfaces\GuiFactoryInterface
 use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\BootstrapDialogForm;
 use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\SemanticUiDialogForm;
 use App\DesignPatterns\Creational\StaticFactory\StaticFactory;
-use Illuminate\Support\Facades\Log;
 
 class CreationalPatternsController extends Controller
 {
@@ -27,27 +26,28 @@ class CreationalPatternsController extends Controller
 
     public function AbstractFactory()
     {
-        $name = 'Abstract factory';
+        $name = 'Abstract Factory';
+        $this->clearLaravelLog()->logMessage($name);
 
         // Using default "Bootstrap" UI (defined in constructor)...
-        Log::info('Using default "Bootstrap" UI (defined in constructor)...');
+        $this->logMessage('Using default "Bootstrap" UI (defined in constructor)...');
 
         $result = [];
         $result[] = $this->guiKit->buildButton()->draw();
         $result[] = $this->guiKit->buildCheckBox()->draw();
 
-        Log::info(print_r($result, true));
+        $this->logMessage(print_r($result, true));
 
 
         // Switching UI to "Semantic UI"...
-        Log::info('Switching UI to "Semantic UI"...');
+        $this->logMessage('Switching UI to "Semantic UI"...');
 
         $this->guiKit = (new GuiKitFactory())->getFactory('semanticui');
         $result = [];
         $result[] = $this->guiKit->buildButton()->draw();
         $result[] = $this->guiKit->buildCheckBox()->draw();
 
-        Log::info(print_r($result, true));
+        $this->logMessage(print_r($result, true));
 
         return view('abstractFactory', compact('name'));
     }
@@ -55,16 +55,17 @@ class CreationalPatternsController extends Controller
     public function FactoryMethod()
     {
         $name = 'Factory Method';
+        $this->clearLaravelLog()->logMessage($name);
 
         // Using "Bootstrap" UI...
-        Log::info('Using "Bootstrap" UI...');
+        $this->logMessage('Using "Bootstrap" UI...');
         $dialogForm = new BootstrapDialogForm();
-        Log::info(print_r($dialogForm->render(), true));
+        $this->logMessage(print_r($dialogForm->render(), true));
 
         // Using "Semantic UI" UI...
-        Log::info('Using "Semantic UI" UI...');
+        $this->logMessage('Using "Semantic UI" UI...');
         $dialogForm = new SemanticUiDialogForm();
-        Log::info(print_r($dialogForm->render(), true));
+        $this->logMessage(print_r($dialogForm->render(), true));
 
         return view('factoryMethod', compact('name'));
     }
@@ -72,26 +73,14 @@ class CreationalPatternsController extends Controller
     public function StaticFactory()
     {
         $name = 'Static Factory';
-        $this->clearLaravelLog()->logPatternName($name);
+        $this->clearLaravelLog()->logMessage($name);
 
         $appMailMessenger = StaticFactory::build('email');
-        Log::info(print_r($appMailMessenger, true));
+        $this->logMessage(print_r($appMailMessenger, true));
 
         $appPhoneMessenger = StaticFactory::build('sms');
-        Log::info(print_r($appPhoneMessenger, true));
+        $this->logMessage(print_r($appPhoneMessenger, true));
 
         return view('staticFactory', compact('name'));
-    }
-
-    private function clearLaravelLog()
-    {
-        file_put_contents(storage_path('logs/laravel.log'),'');
-        return $this;
-    }
-
-    private function logPatternName($name)
-    {
-        Log::info($name);
-        return $this;
     }
 }

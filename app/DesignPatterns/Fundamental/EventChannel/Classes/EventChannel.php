@@ -6,7 +6,7 @@ namespace App\DesignPatterns\Fundamental\EventChannel\Classes;
 
 use App\DesignPatterns\Fundamental\EventChannel\Interfaces\EventChannelInterface;
 use App\DesignPatterns\Fundamental\EventChannel\Interfaces\SubscriberInterface;
-use Illuminate\Support\Facades\Log;
+use App\DesignPatterns\Traits\DispatchesLaravelLog;
 
 /**
  * Class EventChannel
@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Log;
  */
 class EventChannel implements EventChannelInterface
 {
+    use DispatchesLaravelLog;
 
     /**
      * @var array
@@ -28,7 +29,7 @@ class EventChannel implements EventChannelInterface
         if (empty($this->topics[$topic])) {
             return;
         }
-        //Log::info(print_r($this->topics, true));
+        //$this->logMessage(print_r($this->topics, true));
         foreach ($this->topics[$topic] as $subscriber) {
             $subscriber->notify($data);
         }
@@ -42,6 +43,6 @@ class EventChannel implements EventChannelInterface
         $this->topics[$topic][] = $subscriber;
 
         $msg = "{$subscriber->getName()} subscribed on [{$topic}]";
-        Log::info($msg);
+        $this->logMessage($msg);
     }
 }

@@ -5,9 +5,12 @@ namespace App\DesignPatterns\Fundamental\Delegation\Messengers;
 
 
 use App\DesignPatterns\Fundamental\Delegation\Interfaces\MessengerInterface;
+use App\DesignPatterns\Traits\DispatchesLaravelLog;
 
 abstract class AbstractMessenger implements MessengerInterface
 {
+    use DispatchesLaravelLog;
+
     /**
      * @var string
      */

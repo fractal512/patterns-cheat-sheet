@@ -5,10 +5,11 @@ namespace App\DesignPatterns\Fundamental\EventChannel\Classes;
 
 
 use App\DesignPatterns\Fundamental\EventChannel\Interfaces\SubscriberInterface;
-use Illuminate\Support\Facades\Log;
+use App\DesignPatterns\Traits\DispatchesLaravelLog;
 
 class Subscriber implements SubscriberInterface
 {
+    use DispatchesLaravelLog;
 
     /**
      * @var string
@@ -30,7 +31,7 @@ class Subscriber implements SubscriberInterface
     public function notify($data)
     {
         $msg = "{$this->getName()} informed by data [{$data}]";
-        Log::info($msg);
+        $this->logMessage($msg);
     }
 
     /**
