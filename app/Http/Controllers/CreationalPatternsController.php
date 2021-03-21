@@ -6,6 +6,7 @@ use App\DesignPatterns\Creational\AbstractFactory\GuiKitFactory;
 use App\DesignPatterns\Creational\AbstractFactory\Interfaces\GuiFactoryInterface;
 use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\BootstrapDialogForm;
 use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\SemanticUiDialogForm;
+use App\DesignPatterns\Creational\SimpleFactory\MessengerSimpleFactory;
 use App\DesignPatterns\Creational\StaticFactory\StaticFactory;
 
 class CreationalPatternsController extends Controller
@@ -82,5 +83,20 @@ class CreationalPatternsController extends Controller
         $this->logMessage(print_r($appPhoneMessenger, true));
 
         return view('staticFactory', compact('name'));
+    }
+
+    public function SimpleFactory()
+    {
+        $name = 'Simple Factory';
+        $this->clearLaravelLog()->logMessage($name);
+
+        $factory = new MessengerSimpleFactory();
+        $appMailMessenger = $factory->build('email');
+        $this->logMessage(print_r($appMailMessenger, true));
+
+        $appPhoneMessenger = $factory->build('sms');
+        $this->logMessage(print_r($appPhoneMessenger, true));
+
+        return view('simpleFactory', compact('name'));
     }
 }

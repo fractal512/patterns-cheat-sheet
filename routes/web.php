@@ -24,3 +24,4 @@ Route::get('/fundamentals/event-channel', [App\Http\Controllers\FundamentalPatte
 Route::get('/creational/abstract-factory', [App\Http\Controllers\CreationalPatternsController::class, 'AbstractFactory'])->name('abstract-factory');
 Route::get('/creational/factory-method', [App\Http\Controllers\CreationalPatternsController::class, 'FactoryMethod'])->name('factory-method');
 Route::get('/creational/static-factory', [App\Http\Controllers\CreationalPatternsController::class, 'StaticFactory'])->name('static-factory');
+Route::get('/creational/simple-factory', [App\Http\Controllers\CreationalPatternsController::class, 'SimpleFactory'])->name('simple-factory');
