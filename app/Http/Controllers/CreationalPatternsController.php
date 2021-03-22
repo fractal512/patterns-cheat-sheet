@@ -6,6 +6,8 @@ use App\DesignPatterns\Creational\AbstractFactory\GuiKitFactory;
 use App\DesignPatterns\Creational\AbstractFactory\Interfaces\GuiFactoryInterface;
 use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\BootstrapDialogForm;
 use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\SemanticUiDialogForm;
+use App\DesignPatterns\Creational\Multiton\SimpleMultiton;
+use App\DesignPatterns\Creational\Multiton\SimpleMultitonNext;
 use App\DesignPatterns\Creational\SimpleFactory\MessengerSimpleFactory;
 use App\DesignPatterns\Creational\Singleton\AdvancedSingleton;
 use App\DesignPatterns\Creational\Singleton\Contracts\AnotherConnection;
@@ -145,5 +147,30 @@ class CreationalPatternsController extends Controller
         // Laravel way end
 
         return view('singleton', compact('name'));
+    }
+
+    public function Multiton()
+    {
+        $name = 'Multiton';
+        $this->clearLaravelLog()->logMessage($name);
+
+        $result = [];
+        $result[] = SimpleMultiton::getInstance('mysql')->setTest('mysql-test');
+        $result[] = SimpleMultiton::getInstance('mongo');
+
+        $result[] = SimpleMultiton::getInstance('mysql');
+        $result[] = SimpleMultiton::getInstance('mongo')->setTest('mongo-test');
+
+        $simpleMultitonNext = SimpleMultitonNext::getInstance('mysql');
+        $simpleMultitonNext->test2 = 'init';
+        $result[] = $simpleMultitonNext;
+
+        $simpleMultitonNext = SimpleMultitonNext::getInstance('mysql');
+        $simpleMultitonNext->test2 = 'init2';
+        $result[] = $simpleMultitonNext;
+
+        $this->logMessage(print_r($result, true));
+
+        return view('multiton', compact('name'));
     }
 }

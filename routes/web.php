@@ -26,3 +26,4 @@ Route::get('/creational/factory-method', [App\Http\Controllers\CreationalPattern
 Route::get('/creational/static-factory', [App\Http\Controllers\CreationalPatternsController::class, 'StaticFactory'])->name('static-factory');
 Route::get('/creational/simple-factory', [App\Http\Controllers\CreationalPatternsController::class, 'SimpleFactory'])->name('simple-factory');
 Route::get('/creational/singleton', [App\Http\Controllers\CreationalPatternsController::class, 'Singleton'])->name('singleton');
+Route::get('/creational/multiton', [App\Http\Controllers\CreationalPatternsController::class, 'Multiton'])->name('multiton');
