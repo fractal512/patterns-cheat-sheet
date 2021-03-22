@@ -58,6 +58,7 @@
                         <li><a href="{{ route('factory-method') }}" target="_blank">Factory Method Pattern &rarr;</a></li>
                         <li><a href="{{ route('static-factory') }}" target="_blank">Static Factory Pattern &rarr;</a></li>
                         <li><a href="{{ route('simple-factory') }}" target="_blank">Simple Factory Pattern &rarr;</a></li>
+                        <li><a href="{{ route('singleton') }}" target="_blank">Singleton Pattern &rarr;</a></li>
                     </ul>
                 </div>
 
