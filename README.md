@@ -17,3 +17,4 @@ Examples of design patterns implementation in PHP OOP (Laravel).
 - Simple Factory
 - Singleton
 - Multiton
+- Builder
