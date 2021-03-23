@@ -19,3 +19,4 @@ Examples of design patterns implementation in PHP OOP (Laravel).
 - Multiton
 - Builder
 - Lazy Initialization
+- Prototype (Clone)

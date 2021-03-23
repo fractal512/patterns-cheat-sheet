@@ -11,6 +11,7 @@ use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\SemanticUiDialogFo
 use App\DesignPatterns\Creational\LazyInitialization\LazyInitialization;
 use App\DesignPatterns\Creational\Multiton\SimpleMultiton;
 use App\DesignPatterns\Creational\Multiton\SimpleMultitonNext;
+use App\DesignPatterns\Creational\Prototype\PrototypeDemo;
 use App\DesignPatterns\Creational\SimpleFactory\MessengerSimpleFactory;
 use App\DesignPatterns\Creational\Singleton\AdvancedSingleton;
 use App\DesignPatterns\Creational\Singleton\Contracts\AnotherConnection;
@@ -203,6 +204,7 @@ class CreationalPatternsController extends Controller
     {
         $name = 'Lazy Initialization';
         $this->clearLaravelLog()->logMessage($name);
+
         $user = [];
         $start = microtime(true);
         $lazyLoad = new LazyInitialization();
@@ -218,5 +220,18 @@ class CreationalPatternsController extends Controller
         $this->logMessage(print_r($user, true));
 
         return view('lazyInitialization', compact('name'));
+    }
+
+    public function Prototype()
+    {
+        $name = 'Prototype (Clone)';
+        $this->clearLaravelLog()->logMessage($name);
+
+        $prototypeDemo = new PrototypeDemo();
+        $result = $prototypeDemo->run();
+
+        $this->logMessage(print_r($result, true));
+
+        return view('prototype', compact('name'));
     }
 }
