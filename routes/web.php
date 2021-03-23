@@ -32,3 +32,4 @@ Route::get('/creational/multiton', [App\Http\Controllers\CreationalPatternsContr
 Route::get('/creational/builder', [App\Http\Controllers\CreationalPatternsController::class, 'Builder'])->name('builder');
 Route::get('/creational/lazy-initialization', [App\Http\Controllers\CreationalPatternsController::class, 'LazyInitialization'])->name('lazy-initialization');
 Route::get('/creational/prototype', [App\Http\Controllers\CreationalPatternsController::class, 'Prototype'])->name('prototype');
+Route::get('/creational/object-pool', [App\Http\Controllers\CreationalPatternsController::class, 'ObjectPool'])->name('object-pool');

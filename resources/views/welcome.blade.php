@@ -63,6 +63,7 @@
                         <li><a href="{{ route('builder') }}" target="_blank">Builder Pattern &rarr;</a></li>
                         <li><a href="{{ route('lazy-initialization') }}" target="_blank">Lazy Initialization Pattern &rarr;</a></li>
                         <li><a href="{{ route('prototype') }}" target="_blank">Prototype Pattern &rarr;</a></li>
+                        <li><a href="{{ route('object-pool') }}" target="_blank">Object Pool Pattern &rarr;</a></li>
                     </ul>
                 </div>
 

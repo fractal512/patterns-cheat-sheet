@@ -11,6 +11,7 @@ use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\SemanticUiDialogFo
 use App\DesignPatterns\Creational\LazyInitialization\LazyInitialization;
 use App\DesignPatterns\Creational\Multiton\SimpleMultiton;
 use App\DesignPatterns\Creational\Multiton\SimpleMultitonNext;
+use App\DesignPatterns\Creational\ObjectPool\ObjectPoolDemo;
 use App\DesignPatterns\Creational\Prototype\PrototypeDemo;
 use App\DesignPatterns\Creational\SimpleFactory\MessengerSimpleFactory;
 use App\DesignPatterns\Creational\Singleton\AdvancedSingleton;
@@ -233,5 +234,16 @@ class CreationalPatternsController extends Controller
         $this->logMessage(print_r($result, true));
 
         return view('prototype', compact('name'));
+    }
+
+    public function ObjectPool()
+    {
+        $name = 'Object Pool';
+        $this->clearLaravelLog()->logMessage($name);
+
+        $objectPoolDemo = new ObjectPoolDemo();
+        $objectPoolDemo->run();
+
+        return view('objectPool', compact('name'));
     }
 }
