@@ -8,6 +8,7 @@ use App\DesignPatterns\Creational\Builder\BlogPostBuilder;
 use App\DesignPatterns\Creational\Builder\BlogPostManager;
 use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\BootstrapDialogForm;
 use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\SemanticUiDialogForm;
+use App\DesignPatterns\Creational\LazyInitialization\LazyInitialization;
 use App\DesignPatterns\Creational\Multiton\SimpleMultiton;
 use App\DesignPatterns\Creational\Multiton\SimpleMultitonNext;
 use App\DesignPatterns\Creational\SimpleFactory\MessengerSimpleFactory;
@@ -196,5 +197,26 @@ class CreationalPatternsController extends Controller
         $this->logMessage(print_r($posts, true));
 
         return view('builder', compact('name'));
+    }
+
+    public function LazyInitialization()
+    {
+        $name = 'Lazy Initialization';
+        $this->clearLaravelLog()->logMessage($name);
+        $user = [];
+        $start = microtime(true);
+        $lazyLoad = new LazyInitialization();
+        $user[] = clone $lazyLoad;
+        $user[] = microtime(true) - $start . ' s.';
+        $user[] = $lazyLoad->getUser()->name;
+        $user[] = microtime(true) - $start . ' s.';
+        $user[] = $lazyLoad->getUser()->email;
+        $user[] = microtime(true) - $start . ' s.';
+        $user[] = $lazyLoad->getUser()->created_at;
+        $user[] = microtime(true) - $start . ' s.';
+
+        $this->logMessage(print_r($user, true));
+
+        return view('lazyInitialization', compact('name'));
     }
 }

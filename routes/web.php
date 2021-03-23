@@ -30,3 +30,4 @@ Route::get('/creational/simple-factory', [App\Http\Controllers\CreationalPattern
 Route::get('/creational/singleton', [App\Http\Controllers\CreationalPatternsController::class, 'Singleton'])->name('singleton');
 Route::get('/creational/multiton', [App\Http\Controllers\CreationalPatternsController::class, 'Multiton'])->name('multiton');
 Route::get('/creational/builder', [App\Http\Controllers\CreationalPatternsController::class, 'Builder'])->name('builder');
+Route::get('/creational/lazy-initialization', [App\Http\Controllers\CreationalPatternsController::class, 'LazyInitialization'])->name('lazy-initialization');

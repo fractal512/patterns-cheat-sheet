@@ -18,3 +18,4 @@ Examples of design patterns implementation in PHP OOP (Laravel).
 - Singleton
 - Multiton
 - Builder
+- Lazy Initialization

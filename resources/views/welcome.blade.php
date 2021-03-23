@@ -61,6 +61,7 @@
                         <li><a href="{{ route('singleton') }}" target="_blank">Singleton Pattern &rarr;</a></li>
                         <li><a href="{{ route('multiton') }}" target="_blank">Multiton Pattern &rarr;</a></li>
                         <li><a href="{{ route('builder') }}" target="_blank">Builder Pattern &rarr;</a></li>
+                        <li><a href="{{ route('lazy-initialization') }}" target="_blank">Lazy Initialization Pattern &rarr;</a></li>
                     </ul>
                 </div>
 
