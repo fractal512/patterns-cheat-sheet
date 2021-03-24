@@ -6,7 +6,6 @@ use App\DesignPatterns\Fundamental\Delegation\AppMessenger;
 use App\DesignPatterns\Fundamental\EventChannel\EventChannelJob;
 use App\DesignPatterns\Fundamental\PropertyContainer\BlogPost;
 use App\DesignPatterns\Fundamental\PropertyContainer\PropertyContainer;
-use Illuminate\Support\Facades\Log;
 
 class FundamentalPatternsController extends Controller
 {

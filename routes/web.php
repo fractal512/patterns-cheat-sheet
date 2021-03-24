@@ -33,3 +33,6 @@ Route::get('/creational/builder', [App\Http\Controllers\CreationalPatternsContro
 Route::get('/creational/lazy-initialization', [App\Http\Controllers\CreationalPatternsController::class, 'LazyInitialization'])->name('lazy-initialization');
 Route::get('/creational/prototype', [App\Http\Controllers\CreationalPatternsController::class, 'Prototype'])->name('prototype');
 Route::get('/creational/object-pool', [App\Http\Controllers\CreationalPatternsController::class, 'ObjectPool'])->name('object-pool');
+
+// Structural patterns
+Route::get('/structural/adapter', [App\Http\Controllers\StructuralPatternsController::class, 'Adapter'])->name('adapter');

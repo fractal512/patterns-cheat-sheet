@@ -65,6 +65,10 @@
                         <li><a href="{{ route('prototype') }}" target="_blank">Prototype Pattern &rarr;</a></li>
                         <li><a href="{{ route('object-pool') }}" target="_blank">Object Pool Pattern &rarr;</a></li>
                     </ul>
+                    <h2>Structural Patterns:</h2>
+                    <ul>
+                        <li><a href="{{ route('adapter') }}" target="_blank">Adapter Pattern &rarr;</a></li>
+                    </ul>
                 </div>
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">

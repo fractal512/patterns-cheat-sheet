@@ -21,3 +21,7 @@ Examples of design patterns implementation in PHP OOP (Laravel).
 - Lazy Initialization
 - Prototype (Clone)
 - Object Pool
+
+### Structural Patterns
+
+- Adapter
