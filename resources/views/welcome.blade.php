@@ -68,6 +68,7 @@
                     <h2>Structural Patterns:</h2>
                     <ul>
                         <li><a href="{{ route('adapter') }}" target="_blank">Adapter Pattern &rarr;</a></li>
+                        <li><a href="{{ route('facade') }}" target="_blank">Facade Pattern &rarr;</a></li>
                     </ul>
                 </div>
 

@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 use App\DesignPatterns\Structural\Adapter\Classes\MediaLibraryAdapter;
 use App\DesignPatterns\Structural\Adapter\Classes\MediaLibrarySelfWritten;
 use App\DesignPatterns\Structural\Adapter\Interfaces\MediaLibraryInterface;
+use App\DesignPatterns\Structural\Facade\Classes\Order;
+use App\DesignPatterns\Structural\Facade\OrderSaveFacade;
 
 class StructuralPatternsController extends Controller
 {
@@ -25,5 +27,18 @@ class StructuralPatternsController extends Controller
 
         $this->logMessage(print_r($result, true));
         return view('adapter', compact('name'));
+    }
+
+    public function Facade()
+    {
+        $name = 'Facade';
+        $this->clearLaravelLog()->logMessage($name);
+
+        $order = new Order();
+        $data = request()->all();
+
+        (new OrderSaveFacade())->save($order, $data);
+
+        return view('facade', compact('name'));
     }
 }

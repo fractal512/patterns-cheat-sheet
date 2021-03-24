@@ -25,3 +25,4 @@ Examples of design patterns implementation in PHP OOP (Laravel).
 ### Structural Patterns
 
 - Adapter
+- Facade
