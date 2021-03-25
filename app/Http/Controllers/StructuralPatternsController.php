@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 use App\DesignPatterns\Structural\Adapter\Classes\MediaLibraryAdapter;
 use App\DesignPatterns\Structural\Adapter\Classes\MediaLibrarySelfWritten;
 use App\DesignPatterns\Structural\Adapter\Interfaces\MediaLibraryInterface;
+use App\DesignPatterns\Structural\Bridge\WithBridge\BridgeDemo;
+use App\DesignPatterns\Structural\Bridge\WithoutBridge\WithoutBridgeDemo;
 use App\DesignPatterns\Structural\Facade\Classes\Order;
 use App\DesignPatterns\Structural\Facade\OrderSaveFacade;
 
@@ -40,5 +42,16 @@ class StructuralPatternsController extends Controller
         (new OrderSaveFacade())->save($order, $data);
 
         return view('facade', compact('name'));
+    }
+
+    public function Bridge()
+    {
+        $name = 'Bridge';
+        $this->clearLaravelLog()->logMessage($name);
+
+        //(new WithoutBridgeDemo())->run();
+        (new BridgeDemo())->run();
+
+        return view('bridge', compact('name'));
     }
 }

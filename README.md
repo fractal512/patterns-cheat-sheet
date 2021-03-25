@@ -26,3 +26,4 @@ Examples of design patterns implementation in PHP OOP (Laravel).
 
 - Adapter
 - Facade
+- Bridge
