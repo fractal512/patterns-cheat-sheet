@@ -8,6 +8,7 @@ use App\DesignPatterns\Structural\Adapter\Classes\MediaLibrarySelfWritten;
 use App\DesignPatterns\Structural\Adapter\Interfaces\MediaLibraryInterface;
 use App\DesignPatterns\Structural\Bridge\WithBridge\BridgeDemo;
 use App\DesignPatterns\Structural\Bridge\WithoutBridge\WithoutBridgeDemo;
+use App\DesignPatterns\Structural\Composite\Orders\OrderPriceComposite;
 use App\DesignPatterns\Structural\Facade\Classes\Order;
 use App\DesignPatterns\Structural\Facade\OrderSaveFacade;
 
@@ -53,5 +54,15 @@ class StructuralPatternsController extends Controller
         (new BridgeDemo())->run();
 
         return view('bridge', compact('name'));
+    }
+
+    public function Composite()
+    {
+        $name = 'Composite';
+        $this->clearLaravelLog()->logMessage($name);
+
+        (new OrderPriceComposite())->run();
+
+        return view('composite', compact('name'));
     }
 }

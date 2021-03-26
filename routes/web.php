@@ -38,3 +38,4 @@ Route::get('/creational/object-pool', [App\Http\Controllers\CreationalPatternsCo
 Route::get('/structural/adapter', [App\Http\Controllers\StructuralPatternsController::class, 'Adapter'])->name('adapter');
 Route::get('/structural/facade', [App\Http\Controllers\StructuralPatternsController::class, 'Facade'])->name('facade');
 Route::get('/structural/bridge', [App\Http\Controllers\StructuralPatternsController::class, 'Bridge'])->name('bridge');
+Route::get('/structural/composite', [App\Http\Controllers\StructuralPatternsController::class, 'Composite'])->name('composite');
