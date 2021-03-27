@@ -72,6 +72,10 @@
                         <li><a href="{{ route('bridge') }}" target="_blank">Bridge Pattern &rarr;</a></li>
                         <li><a href="{{ route('composite') }}" target="_blank">Composite Pattern &rarr;</a></li>
                     </ul>
+                    <h2>Behavioral Patterns:</h2>
+                    <ul>
+                        <li><a href="{{ route('strategy') }}" target="_blank">Strategy Pattern &rarr;</a></li>
+                    </ul>
                 </div>
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
