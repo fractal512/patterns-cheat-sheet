@@ -39,6 +39,7 @@ Route::get('/structural/adapter', [App\Http\Controllers\StructuralPatternsContro
 Route::get('/structural/facade', [App\Http\Controllers\StructuralPatternsController::class, 'Facade'])->name('facade');
 Route::get('/structural/bridge', [App\Http\Controllers\StructuralPatternsController::class, 'Bridge'])->name('bridge');
 Route::get('/structural/composite', [App\Http\Controllers\StructuralPatternsController::class, 'Composite'])->name('composite');
+Route::get('/structural/decorator', [App\Http\Controllers\StructuralPatternsController::class, 'Decorator'])->name('decorator');
 
 // Behavioral patterns
 Route::get('/behavioral/strategy', [App\Http\Controllers\BehavioralPatternsController::class, 'Strategy'])->name('strategy');

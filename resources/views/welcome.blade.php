@@ -71,6 +71,7 @@
                         <li><a href="{{ route('facade') }}" target="_blank">Facade Pattern &rarr;</a></li>
                         <li><a href="{{ route('bridge') }}" target="_blank">Bridge Pattern &rarr;</a></li>
                         <li><a href="{{ route('composite') }}" target="_blank">Composite Pattern &rarr;</a></li>
+                        <li><a href="{{ route('decorator') }}" target="_blank">Decorator Pattern &rarr;</a></li>
                     </ul>
                     <h2>Behavioral Patterns:</h2>
                     <ul>

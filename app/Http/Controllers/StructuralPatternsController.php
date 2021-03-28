@@ -9,6 +9,7 @@ use App\DesignPatterns\Structural\Adapter\Interfaces\MediaLibraryInterface;
 use App\DesignPatterns\Structural\Bridge\WithBridge\BridgeDemo;
 use App\DesignPatterns\Structural\Bridge\WithoutBridge\WithoutBridgeDemo;
 use App\DesignPatterns\Structural\Composite\Orders\OrderPriceComposite;
+use App\DesignPatterns\Structural\Decorator\DecoratorApp;
 use App\DesignPatterns\Structural\Facade\Classes\Order;
 use App\DesignPatterns\Structural\Facade\OrderSaveFacade;
 
@@ -64,5 +65,15 @@ class StructuralPatternsController extends Controller
         (new OrderPriceComposite())->run();
 
         return view('composite', compact('name'));
+    }
+
+    public function Decorator()
+    {
+        $name = 'Decorator';
+        $this->clearLaravelLog()->logMessage($name);
+
+        (new DecoratorApp())->run();
+
+        return view('decorator', compact('name'));
     }
 }

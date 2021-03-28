@@ -28,6 +28,7 @@ Examples of design patterns implementation in PHP OOP (Laravel).
 - Facade
 - Bridge
 - Composite
+- Decorator
 
 ### Behavioral Patterns
 
