@@ -10,6 +10,7 @@ use App\DesignPatterns\Structural\Bridge\WithBridge\BridgeDemo;
 use App\DesignPatterns\Structural\Bridge\WithoutBridge\WithoutBridgeDemo;
 use App\DesignPatterns\Structural\Composite\Orders\OrderPriceComposite;
 use App\DesignPatterns\Structural\Decorator\DecoratorApp;
+use App\DesignPatterns\Structural\Decorator\DecoratorAppSettings;
 use App\DesignPatterns\Structural\Facade\Classes\Order;
 use App\DesignPatterns\Structural\Facade\OrderSaveFacade;
 
@@ -72,7 +73,8 @@ class StructuralPatternsController extends Controller
         $name = 'Decorator';
         $this->clearLaravelLog()->logMessage($name);
 
-        (new DecoratorApp())->run();
+        //(new DecoratorApp())->run();
+        (new DecoratorAppSettings())->run();
 
         return view('decorator', compact('name'));
     }
